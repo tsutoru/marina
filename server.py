@@ -26,10 +26,10 @@ class Handler(BaseHTTPRequestHandler):
     def do_GET(self):
         parsed = urlparse(self.path)
 
-        if parsed.path == "/healthz":
+        if parsed.path == "/health":
             self._respond(200, "ok")
 
-        elif parsed.path == "/":
+        elif parsed.path == "/what":
             self._respond(200,
                 "marina SAT solver.\n"
                 "GET  /solve?prop=<expr>\n"
